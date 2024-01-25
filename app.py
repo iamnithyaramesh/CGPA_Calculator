@@ -26,19 +26,19 @@ def four_credit(grade):
     
 def three_credit(grade):
     total=0
-    if grade=='O':
+    if grade in'Oo':
         total=30
-    elif grade=='A+':
+    elif grade=='A+' or grade=='a+':
         total=27
-    elif grade=='A':
+    elif grade in'Aa':
         total=24
-    elif grade=='B+':
+    elif grade=='B+' or grade=='b+':
         total=21
-    elif grade=='B':
+    elif grade=='Bb':
         total=18
-    elif grade=='C':
+    elif grade=='C+' or grade=='c+':
         total=15
-    elif grade=='C+':
+    elif grade=='Cc':
         total=12
     else:
         total=0
@@ -48,19 +48,19 @@ def three_credit(grade):
 def lab_credit(grade):
 
     total=0
-    if grade=='O':
+    if grade in'Oo':
         total=15
-    elif grade=='A+':
+    elif grade=='A+' or grade=='a+':
         total=13.5
-    elif grade=='A':
+    elif grade in'Aa':
         total=12
-    elif grade=='B+':
+    elif grade=='B+' or grade=='b+':
         total=10.5
-    elif grade=='B':
+    elif grade=='Bb':
         total=9
-    elif grade=='C':
+    elif grade=='C+' or grade=='c+':
         total=7.5
-    elif grade=='C+':
+    elif grade=='Cc':
         total=6
     else:
         total=0
@@ -69,19 +69,19 @@ def lab_credit(grade):
 
 def one_credit(grade):
     total=0
-    if grade=='O':
+    if grade in'Oo':
         total=10
-    elif grade=='A+':
+    elif grade=='A+' or grade=='a+':
         total=9
-    elif grade=='A':
+    elif grade in'Aa':
         total=8
-    elif grade=='B+':
+    elif grade=='B+' or grade=='b+':
         total=7
-    elif grade=='B':
+    elif grade=='Bb':
         total=6
-    elif grade=='C':
+    elif grade=='C+' or grade=='c+':
         total=5
-    elif grade=='C+':
+    elif grade=='Cc':
         total=4
     else:
         total=0
@@ -91,11 +91,11 @@ def one_credit(grade):
 
 def cgpa_calculator3(maths, logic, com, p, db, u, tam, lab1, lab2):
     x = four_credit(maths) + three_credit(logic) + three_credit(com) + three_credit(p) + three_credit(db) + three_credit(u) + one_credit(tam) + lab_credit(lab1) + lab_credit(lab2)
-    return x / 23
+    return round(x / 23,3)
 
 def cgpa_calculator1(maths, phy, chem, eng, python,eg, tam, lab1, lab2):
     x = four_credit(maths) + three_credit(phy) + three_credit(chem) + three_credit(eng) + three_credit(python) + four_credit(eg) + one_credit(tam) + lab_credit(lab1) + lab_credit(lab2)
-    return x / 24
+    return round(x / 24,3)
 
 
 
@@ -156,6 +156,8 @@ def result():
 
     return render_template('final_result.html', cgpa=cgpa)
 
+def create_app():
+   return app
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    app.run(debug=False)
