@@ -6,11 +6,11 @@
 
 ## Problem Statement
 
-To develop a simple CGPA Calculator App to calculate the CGPA of 1st Semester and 3rd Semester results(IT Dept Subjects) - deployed using Vercel.
+The CGPA Calculator App is a simple and user-friendly application designed to calculate the Cumulative Grade Point Average (CGPA) for the 1st and 3rd semester results specifically for IT Department subjects. The app is deployed using Vercel for ease of access and reliability.
+
 ## Tech Stack
-
-
-
+-Backend : Python
+-Frontend : HTML , CSS ,BootStrap
 
 
 
